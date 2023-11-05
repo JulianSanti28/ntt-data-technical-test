@@ -11,7 +11,7 @@
 	<groupId>com.ntt.data</groupId>
 	<artifactId>technical-test-mtt-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>technical-test-ntt-data</name>
+	<name>ntt-data-technical-test</name>
 	<description>This project is a technical test to work with NTT Data Company</description>
 	<properties>
 		<java.version>17</java.version>
