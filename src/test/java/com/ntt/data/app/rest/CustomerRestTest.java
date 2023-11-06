@@ -4,6 +4,7 @@ import com.ntt.data.app.business.CustomerBusinessImpl;
 import com.ntt.data.app.config.MessageLoader;
 import com.ntt.data.app.domain.CustomerDto;
 import com.ntt.data.app.domain.ResponseDto;
+import com.ntt.data.app.util.MessagesConstants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -41,7 +42,7 @@ class CustomerRestTest {
     @Test
     void getCustomerByDocumentTest() throws Exception {
         final var DOCUMENT = "1";
-        ResponseDto<CustomerDto> response = new ResponseDto<>(HttpStatus.OK.value(), MessageLoader.getInstance().getMessage("IM001"));
+        ResponseDto<CustomerDto> response = new ResponseDto<>(HttpStatus.OK.value(), MessageLoader.getInstance().getMessage(MessagesConstants.EM001));
         when(this.customerBusiness.getByDocumentNumber(DOCUMENT)).thenReturn(response);
         MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
                 .get(ENDPOINT)

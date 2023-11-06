@@ -6,6 +6,7 @@ import com.ntt.data.app.exception.BusinessRuleException;
 import com.ntt.data.app.mapper.ICustomerMapper;
 import com.ntt.data.app.model.Customer;
 import com.ntt.data.app.repository.ICustomerRepository;
+import com.ntt.data.app.util.MessagesConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ class CustomerBusinessImplTest {
             this.customerBusiness.getByDocumentNumber(DOCUMENT_NUMBER);
         });
         Assertions.assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatus());
-        Assertions.assertEquals("EM001", response.getErrorCode());
+        Assertions.assertEquals(MessagesConstants.EM001, response.getErrorCode());
     }
 
     @Test
@@ -49,7 +50,7 @@ class CustomerBusinessImplTest {
             this.customerBusiness.getByDocumentNumber(DOCUMENT_NUMBER);
         });
         Assertions.assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatus());
-        Assertions.assertEquals("EM002", response.getErrorCode());
+        Assertions.assertEquals(MessagesConstants.EM002, response.getErrorCode());
     }
 
     @Test
